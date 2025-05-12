@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minecraft Crafting</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        
+        <!-- Left menu -->
+
+        <button id="menu-toggle">☰ Menu</button>
+        <nav class="menu" id="menu">
+        
+            <input type="text" id="search" placeholder="Search recipe..." onkeyup="filterRecipes()">
+            <ul id="recipeList">
+                <li><a href="#" onclick="showRecipe('oak planks')">oak planks</a></li>
+                <li><a href="#" onclick="showRecipe('stick')">stick</a></li>
+                <li><a href="#" onclick="showRecipe('torch')">torch</a></li>
+                <li><a href="#" onclick="showRecipe('crafting table')">crafting table</a></li>
+                <li><a href="#" onclick="showRecipe('furnace')">furnace</a></li>
+                <li><a href="#" onclick="showRecipe('chest')">chest</a></li>
+                <li><a href="#" onclick="showRecipe('ladder')">ladder</a></li>
+                <li><a href="#" onclick="showRecipe('fence')">fence</a></li>
+                <li><a href="#" onclick="showRecipe('boat')">boat</a></li>
+                <li><a href="#" onclick="showRecipe('wooden slab')">wooden slap</a></li>
+                <li><a href="#" onclick="showRecipe('stone slab')">stone slab</a></li>
+                <li><a href="#" onclick="showRecipe('sign')">sign</a></li>
+                <li><a href="#" onclick="showRecipe('door')">door</a></li>
+                <li><a href="#" onclick="showRecipe('glowstone')">glowstone</a></li>
+                <li><a href="#" onclick="showRecipe('snow block')">snow block</a></li>
+                <li><a href="#" onclick="showRecipe('TNT')">TNT</a></li>
+                <li><a href="#" onclick="showRecipe('clay block')">clay block</a></li>
+                <li><a href="#" onclick="showRecipe('brick block')">brick block</a></li>
+                <li><a href="#" onclick="showRecipe('bookshelf')">bookshelf</a></li>
+                <li><a href="#" onclick="showRecipe('sand block')">sand block</a></li>
+                <li><a href="#" onclick="showRecipe('smooth sandstone')">smooth sandstone</a></li>
+                <li><a href="#" onclick="showRecipe('decorative sandstone')">decorative sandstone</a></li>
+                <li><a href="#" onclick="showRecipe('note block')">note block</a></li>
+                <li><a href="#" onclick="showRecipe('jack-o-laterne')">jack-o-laterne</a></li>
+                <li><a href="#" onclick="showRecipe('lapis lazuli-block')">lapis lazuli-block	</a></li>
+
+                <li><a href="#" onclick="showRecipe('diamond block')">diamond block</a></li>
+                <li><a href="#" onclick="showRecipe('gold block')">gold block</a></li>
+                <li><a href="#" onclick="showRecipe('iron block')">iron block</a></li>
+                <li><a href="#" onclick="showRecipe('emerald block')">emerald block</a></li>
+                <li><a href="#" onclick="showRecipe('coal block')">coal block</a></li>
+                <li><a href="#" onclick="showRecipe('stone brick')">stone brick</a></li>
+                <li><a href="#" onclick="showRecipe('wooden stairs')">wooden stairs</a></li>
+                <li><a href="#" onclick="showRecipe('stone stairs')">stone stairs</a></li>
+                <li><a href="#" onclick="showRecipe('cobblestone wall')">cobblestone wall</a></li>
+                <li><a href="#" onclick="showRecipe('redstone block')">redstone block</a></li>
+                <li><a href="#" onclick="showRecipe('nether block')">nether block</a></li>
+                <li><a href="#" onclick="showRecipe('quartz block')">quartz block</a></li>
+                <li><a href="#" onclick="showRecipe('chiseled quartz block')">chiseled quartz block</a></li>
+                <li><a href="#" onclick="showRecipe('pillar quartz block')">pillar quartz block</a></li>
+                <li><a href="#" onclick="showRecipe('stained clay court')">stained clay court</a></li>
+                <li><a href="#" onclick="showRecipe('hay bal')">hay bal</a></li>
+                <li><a href="#" onclick="showRecipe('pickaxe')">pickaxe</a></li>
+                <li><a href="#" onclick="showRecipe('axe')">axe</a></li>
+                <li><a href="#" onclick="showRecipe('shovel')">shovel</a></li>
+                <li><a href="#" onclick="showRecipe('hoe')">hoe</a></li>
+                <li><a href="#" onclick="showRecipe('fishing rod')">fishing rod</a></li>
+                <li><a href="#" onclick="showRecipe('flint and steel')">flint and steel</a></li>
+                <li><a href="#" onclick="showRecipe('compass')">compass</a></li>
+                <li><a href="#" onclick="showRecipe('clock')">clock</a></li>
+                <li><a href="#" onclick="showRecipe('bucket')">bucket</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <main class="content">
+            <h1>Minecraft Crafting Recipes</h1> 
+
+            <div id="startMessage" class="recipe start-fullbox">
+    
+                <p>Select a recipe from the left to see how it's crafted!</p>
+            
+                <div class="start-content">
+                    <div class="start-text">
+                        <p class="subtext">Hint: If you're new to crafting, start with a crafting table it unlocks everything else!</p>
+                    </div>
+                    <div class="start-image">
+                        <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/93/Crafting_Table_JE3_BE2.png/revision/latest?cb=20190606093431" alt="Crafting Table" width="120">
+                    </div>
+                </div>
+            
+            </div>
+
+            <div id="oak planks" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>oak planks</h2>
+                    <p>Place 1 wood</p>
+                    <img src="https://www.digminecraft.com/basic_recipes/images/make_oak_wood_plank.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="stick" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>stick</h2>
+                    <p>Place 2 oak planks on the top of each other.</p>
+                    <img src="https://www.digminecraft.com/basic_recipes/images/make_stick.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="torch" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>torch</h2>
+                    <p>Place 1 coal on top of 1 stick.</p>
+                    <img src="https://www.digminecraft.com/basic_recipes/images/make_torch.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="crafting table" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>crafting table</h2>
+                    <p>Use 4 wooden planks arranged in a 2x2 pattern.</p>
+                    <img src="https://www.digminecraft.com/basic_recipes/images/make_crafting_table.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            
+            <div id="furnace" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>furnace</h2>
+                    <p>Use 8 cobblestones in a circle, leaving the center empty.</p>
+                    <img src="https://www.digminecraft.com/basic_recipes/images/make_furnace.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="chest" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>chest</h2>
+                    <p>Use 8 oak planks in a circle, leaving the center empty.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm8jwYuKjhyldov_0_JhcoHSnAKkUyhsOqPVCsUrLqOg&s&ec=72940543" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="ladder" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>ladder</h2>
+                    <p>Use 7 sticks arranged like a H.</p>
+                    <img src="https://www.digminecraft.com/basic_recipes/images/make_ladder.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="fence" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>fence</h2>
+                    <p>Use 2 sticks and 4 wood planks. In a Crafting Table, place 2 wood planks in the first column, 2 sticks in the middle column, and 2 wood planks in the third column. Leave the bottom row empty.</p>
+                    <img src="https://www.digminecraft.com/basic_recipes/images/make_oak_fence.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="boat" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>boat</h2>
+                    <p>You need five wood planks from any wood type.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd0sDBK-HNRcYTv3tIXTRgVHKoiKn6OmIUJ9xardZcqg&s&ec=72940543" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+
+            <div id="wooden slab" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>wooden slab</h2>
+                    <p>Place the planks in the crafting table's bottom row, with three planks in a row, to produce a wooden slab.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_oak_wood_slab.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="stone slab" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>stone slab</h2>
+                    <p>Place the smooth stone in the bottom three slots of the crafting table to create six stone slabs.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_stone_slab.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="sign" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>sign</h2>
+                    <p>You need six planks of any wood type and one stick. Place the stick in the center and the planks around it.</p>
+                    <img src="https://www.digminecraft.com/basic_recipes/images/make_sign.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="door" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>door</h2>
+                    <p>Use six planks or six iron ingots and arrange them two wide and three high.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTifYl4Ql9IWAFJhleDK3v-Yr9_hwfLra0KQfqV5I-Wrg&s&ec=72940543" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="glowstone" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>glowstone</h2>
+                    <p>Place four glowstone dust pieces in a 2x2 square within a crafting table.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_glowstone.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="snow block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>snow block</h2>
+                    <p>Place 4 snowballs in a 2x2 square to craft a snow block.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_snow.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="TNT" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>TNT</h2>
+                    <p>Requires 4 sand blocks and 5 gunpowder. Place gunpowder in the corners and center, and fill the rest with sand.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_tnt2.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="clay block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>clay block</h2>
+                    <p>Place 4 clay balls in a 2x2 grid in the crafting table.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_clay_block.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="brick block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>brick block</h2>
+                    <p>Place 4 bricks in a square to craft a brick block.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_bricks.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="bookshelf" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>bookshelf</h2>
+                    <p>Use 6 planks and 3 books. Place planks top and bottom, and books in the middle row.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_bookshelf.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="sand block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>sand block</h2>
+                    <p>Place four sand blocks in a 2x2 grid to create sandstone.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_sandstone.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="smooth sandstone" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>smooth sandstone</h2>
+                    <p>Place four sandstone blocks in a 2x2 square to make smooth sandstone.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI105a083YvaMFr87U4dzbcliqV_CRRpzxUMhxJRe7ug&s&ec=72940543" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="decorative sandstone" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>decorative sandstone</h2>
+                    <p>Place 2 sandstone slabs vertically to craft decorative sandstone.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_chiseled_sandstone.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="note block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>note block</h2>
+                    <p>Surround a redstone dust with 8 wood planks in the crafting grid.</p>
+                    <img src="https://www.digminecraft.com/decoration_recipes/images/make_note_block.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="jack-o-laterne" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>jack-o-laterne</h2>
+                    <p>Combine a carved pumpkin with a torch underneath in the crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_jack_o_lantern.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="lapis lazuli-block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>lapis lazuli-block</h2>
+                    <p>Place 9 lapis lazuli in a 3x3 grid to make a block.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVRIDaNsEVLMIXy-I3sAgqvTpf0R5Wq-PYOM6t2MQOhQ&s&ec=72940543" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div id="diamond block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>diamond block</h2>
+                    <p>Place 9 diamond ingots in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_diamond_block.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="gold block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>gold block</h2>
+                    <p>Place 9 gold ingots in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_gold_block.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="iron block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>iron block</h2>
+                    <p>Place 9 iron ingots in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_iron_block.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="emerald block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>emerald blcok</h2>
+                    <p>Place 9 emerald ingots in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_emerald_block.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            
+            <div id="coal block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>coal block</h2>
+                    <p>Place 9 coals in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_coal_block.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="stone brick" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>stone brick</h2>
+                    <p>Place 4 stones in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_stone_bricks.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="wooden stairs" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>wooden stairs</h2>
+                    <p>Use 6 oak planks arranged like stairs.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_oak_wood_stairs.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="stone stairs" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>stone stairs</h2>
+                    <p>Use 6 stones arranged like stairs.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrdHa3xeR5lhgrbPwSv1q0ZLN5hhfJMkZ3vA&s" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="cobblestone wall" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>cobblestone wall</h2>
+                    <p>Place 6 cobblestones in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_cobblestone_wall.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+
+            <div id="redstone block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>redstone blcok</h2>
+                    <p>Place 9 redstones (also called redstone dust) in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_redstone_block.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="nether block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>nether block</h2>
+                    <p>Place 4 nether ingots in the 2x2 grid.</p>
+                    <img src="https://cdn.prod.website-files.com/6634a8f8dd9b2a63c9e6be83/66ccb6f038f9f1d6c77ecb33_449091.image2.jpeg" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="quartz blcok" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>quartz block</h2>
+                    <p>Place 4 nether quartz in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_quartz_block.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="chiseled quartz block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>chiseled quartz block</h2>
+                    <p>place 2 quartz slabs in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_chiseled_quartz_block.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="pillar quartz block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>pillar quartz block</h2>
+                    <p>Place 2 blocks of quartz in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_pillar_quartz_block.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="stained clay court" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>stained clay court</h2>
+                    <p>Simply place the dye in the middle and the 8 hardened clay blocks around it in the crafting table.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGzjjr8SlKkFoS4SR_ZsgyxH8sOX2I_RjVMw&s" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="hay bal" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>hay bal</h2>
+                    <p>There should be 3 wheat in the first row, 3 wheat in the second row, and 3 wheat in the third row.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_hay_bale.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="pickaxe" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>pickaxe</h2>
+                    <p>Using 2 sticks and 3 identical units of tool material.</p>
+                    <img src="https://www.digminecraft.com/tool_recipes/images/make_stone_pickaxe.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="axe" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>axe</h2>
+                    <p>You need two sticks and then three planks, iron or gold ingots, cobblestone blocks or diamonds arranged in the top left corner of the crafting grid.</p>
+                    <img src="https://www.digminecraft.com/tool_recipes/images/make_wooden_axe.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="shovel" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>shovel</h2>
+                    <p> Place 1 tool material and 2 sticks in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/tool_recipes/images/make_wooden_shovel.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="sand block" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>sand block</h2>
+                    <p>Place four sand blocks in a 2x2 grid to create sandstone.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_sandstone.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="hoe" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>hoe</h2>
+                    <p>Place 2 tool material and 2 sticks in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/tool_recipes/images/make_wooden_hoe.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="decorative sandstone" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>decorative sandstone</h2>
+                    <p>Place 2 sandstone slabs vertically to craft decorative sandstone.</p>
+                    <img src="https://www.digminecraft.com/block_recipes/images/make_chiseled_sandstone.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="fishing rod" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>fishing rod</h2>
+                    <p>Place 3 sticks and 2 strings in the 3x3 crafting grid.</p>
+                    <img src="https://www.digminecraft.com/tool_recipes/images/make_fishing_rod.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="flint and steel" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>flint and steel</h2>
+                    <p>Place an iron ingot and flint piece on the craft grid.</p>
+                    <img src="https://www.digminecraft.com/tool_recipes/images/make_flint_and_steel.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="compass" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>compass</h2>
+                    <p>Place four iron ingots above, below and next to the redstone.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ-UaYlp7BZniQPL9BQPSsZAZ108-r4QCc2Q&s" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="clock" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>clock</h2>
+                    <p>Place the Redstone Dust in the center square. Surround it with the Gold Ingots in a diamond shape: One above. One below. One to the left. One to the right.</p>
+                    <img src="https://www.digminecraft.com/tool_recipes/images/make_clock.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+            
+            <div id="bucket" class="recipe" style="display: none;">
+                <div class="recipe-content">
+                    <h2>bucket</h2>
+                    <p>Place three iron ingotsarranged like a V.</p>
+                    <img src="https://www.digminecraft.com/tool_recipes/images/make_bucket.png" width="300">
+                </div>
+                <div class="recipe-footer">
+                    <button onclick="backToStart()">Back to start</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+        const links = document.querySelectorAll("#recipeList a");
+
+        menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("open");
+        });
+
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                if (window.innerWidth <= 768) {
+                    menu.classList.remove("open");
+                }
+            });
+        });
+        
+        function backToStart() {
+    document.querySelectorAll(".recipe").forEach(div => {
+        div.style.display = "none";
+    });
+    document.getElementById("startMessage").style.display = "block";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+        function showRecipe(name) {
+            document.getElementById("startMessage").style.display = "none";
+            document.querySelectorAll(".recipe").forEach(div => {
+                div.style.display = "none";
+            });
+            document.getElementById(name).style.display = "block";
+        }
+
+        function filterRecipes() {
+        const input = document.getElementById("search");
+        const filter = input.value.toLowerCase();
+        const ul = document.getElementById("recipeList");
+        const li = ul.getElementsByTagName("li");
+
+        for (let i = 0; i < li.length; i++) {
+            const a = li[i].getElementsByTagName("a")[0];
+            const text = a.textContent.toLowerCase();
+            li[i].style.display = text.includes(filter) ? "" : "none";
+        }
+    }
+
+    window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+        window.scrollTo({ top: 0, behavior: "auto" });
+    }
+});
+
+    </script>
+</body>
+</html>
